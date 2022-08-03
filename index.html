@@ -9,9 +9,30 @@
 </head>
 
 <body>
-    <h2>Hello World!</h2>
+    <!-- <h2>Hello World!</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, pariatur quidem expedita officia quo optio
-        magni saepe, esse temporibus molestias est dolorum, ducimus voluptatem incidunt?</p>
+        magni saepe, esse temporibus molestias est dolorum, ducimus voluptatem incidunt?</p> -->
+
+    <h2>Percentage calculator</h2>
+    <form onsubmit="calculate(); return false">
+        <label for="totalMarks">Total Marks </label>
+        <input type="number" min="1" id="totalMarks" required placeholder="Enter total marks">
+        <br>
+        <label for="obtainedMarks">Obtained Marks </label>
+        <input type="number" min="1" id="obtainedMarks" required placeholder="Enter obtained marks">
+        <br>
+        <button type="submit">Calculate</button>
+        <h2 id="result"></h2>
+    </form>
+
+    <script>
+        function calculate() {
+            let totalMarks = document.querySelector("#totalMarks").value;
+            let obtainedMarks = document.querySelector("#obtainedMarks").value;
+            let result = obtainedMarks * 100 / totalMarks;
+            document.querySelector("#result").innerHTML = `You have got ${result}%`
+        }
+    </script>
 </body>
 
 </html>
